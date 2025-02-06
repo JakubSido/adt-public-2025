@@ -26,7 +26,7 @@ https://github.com/JakubSido/example_package
 ### Obecně python
 
 - [w3c](https://www.w3schools.com/python)
-- [ArjanCodes - YouTube - Python](!https://www.youtube.com/@ArjanCodes/videos)
+- [ArjanCodes - YouTube - Python](https://www.youtube.com/@ArjanCodes/videos)
 
 ### Jak psát čitelný a dobře udržitelný kód?
 
