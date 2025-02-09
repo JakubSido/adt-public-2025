@@ -16,7 +16,7 @@ Spusťte REPL Pythonu v terminálu operačního systému. Spočtěte délku pře
 - ruff (Astral Software)
   - An extremely fast Python linter and code formatter, written in Rust.
   - Pro přizpůsobení nastavení můžeme upravovat .ruff.toml v root adresáři našeho projektu.
-    - My jsme pro vás připravili nastavení, které je rozumné pro studium ADT [.ruff.toml](.ruff.toml)
+    - My jsme pro vás připravili nastavení, které je rozumné pro studium ADT [.ruff.toml](../.ruff.toml)
 - python (microsoft)
   - Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more.
 - MyPy Type Checker (microsoft)
