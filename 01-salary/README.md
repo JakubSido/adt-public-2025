@@ -38,7 +38,7 @@ Vytvořte skript (textový soubor) se sekvencí příkazů, které vedou ke stej
 
 ## 3. Jednoduchá aplikace pro analýzu databáze osob
 
-Vstupující datový soubor[^1] [[liks]](https://liks.fav.zcu.cz/adt/exam/service/download-data?filename=data-salaries-years-100Ksh.csv) obsahuje 1.1M datových vzorků s informacemi o sledované skupině osob. Data nesou záznamy z po sobě jdoucích 11 let v období 2010-2020. 
+Vstupující datový soubor[^1] [[liks]](https://liks.fav.zcu.cz/adt/exam/service/download-data?filename=data-salaries-years-100Ksh.csv) obsahuje 1.1M datových vzorků s informacemi o sledované skupině osob. Data nesou záznamy z po sobě jdoucích 11 let v období 2010-2020 kódované UTF-8.
 Úkolem je vytvořit program, který načte záznamy a vypočte průměrný příjem osob splňující zadanou podmínku, s
 jeho pomocí bude snadné odpovídat na otázky jako:
 _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
@@ -50,7 +50,9 @@ _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
    Ověřte, že:
     1. Programu je předán očekávaný počet argumentů.
     2. Předaný argument je cesta k existujícímu souboru.
-    3. Ověřte, že pracujeme se souborem ve správném kódování znaků
+    3. Ověřte, že pracujeme se souborem ve správném kódování znaků. `open(file_path, encoding="utf-8")`
+
+    _pozn.: Při otevírání souborů používá python kódování závislé na platformě. Tedy je vždy rozumné explicitně uvádět kódování._
 
 2. Připravte třídu pro reprezentaci Záznamu -- řádek v souboru s daty.
 3. Vytvořte funkci _load\_data\_file_, která načtete do paměti všechny osoby z datového souboru. Cestu k souboru
@@ -64,13 +66,13 @@ _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
    příjem.
 6. Ve funkci main zavolejte funkci pro načtení dat. Pohledem ověřte, že je seznam osob načtený správně.
 7. Navrácený seznam osob předejte do funkce pro výpočet průměrného příjmu.
-8. Hodnotu průměrného příjjmu vytiskněte na standardní výstup programu.
-9. Upravte funkci _load\_data\_file_ tak, aby přijimala navíc jeden parametr $year$. Funkce vrátí záznamy
+8. Hodnotu průměrného příjmu vytiskněte na standardní výstup programu.
+9. Upravte funkci _load\_data\_file_ tak, aby přijímala navíc jeden parametr $year$. Funkce vrátí záznamy
    pouze z daného roku.
 10. Připravte funkci pro výpočet mediánu příjmu.
 
 11. Jak se změnil průměrný příjem a medián mezi roky 2014 a 2015?
-12. Implementujte smyčku, která se uživatele bude doptávat na rok, který jej zajímá a počítat statistiky. 
+12. Implementujte smyčku, která se uživatele bude doptávat na rok, který jej zajímá a počítat statistiky.
 
 # K zamyšlení
 
@@ -91,7 +93,7 @@ _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
 3. Očekávání vstupu od uživatele intput() je stejné jako prompt REPLu
 
 # Domácí cvičení Odpovězte na otázku:
-V roce 2013 byl nendostatek krve 0+. Kolik litrů krve mohlo transfúzní oddělení v obci Kamenice v tomto roce odebrat od lidí?
+V roce 2013 byl nedostatek krve 0+. Kolik litrů krve mohlo transfúzní oddělení v obci Kamenice v tomto roce odebrat od lidí?
    1. Darovat krev může každý muž či žena ve věku 18-65 let.
    2. Tělesná hmotnost dárce krve by měla být minimálně 50 kg.
    3. Muži mohou darovat 4x ročně ale ženy pouze 3x.
