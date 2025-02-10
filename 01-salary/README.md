@@ -90,6 +90,37 @@ _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
 2. Všimněme si podobnosti argumentů python main.py python main.py datat.csv main.py je vstup pro python data.csv je
    vstup pro main.py
 3. Očekávání vstupu od uživatele intput() je stejné jako prompt REPLu
+4. K dobré praxi programátora patří psát přehledný kód. Zamýšlejme se nad tím, jak větvíme svůj kód pomocí `if else`. Porovnejme následující dva příklady. Který z nich je přehlednější, jednodušší, má menší hloubku zanoření vyhodnocování podmínek?
+
+
+```python
+if len(arguments) == 2:
+input_path = arguments[1]
+    if os.path.exists(input_path):
+        data = load_data_file(input_path)
+        for d in data:
+            print(d)
+    else:
+        print(f"Soubor {input_path} neexistuje")
+        exit(2)
+else:
+    print("Program nebyl spuštěn správně. Očekávám jméno souboru\n")
+    exit(1)
+```
+```python 
+if len(arguments) != 2:
+    print("Program nebyl spuštěn správně. Očekávám jméno souboru\n")
+    exit(1)
+
+input_path = arguments[1]
+if not os.path.exists(input_path):
+    print(f"Soubor {input_path} neexistuje")
+    exit(2)
+
+data = load_data_file(input_path)
+for d in data:
+    print(d)
+```
 
 # K dalšímu procvičení:
 V roce 2013 byl nedostatek krve 0+. Kolik litrů krve mohlo transfúzní oddělení v obci Kamenice v tomto roce odebrat od lidí?
