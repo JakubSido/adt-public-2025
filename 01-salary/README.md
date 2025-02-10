@@ -77,13 +77,12 @@ _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
 # K zamyšlení
 
 1. Je nutné v našem případě načítat všechny informace o osobách do přepravek?
-2. Je možné úkol splnit jedním průchodem bez nutnosti načítat celá data do paměti?
+2. Je možné úkol splnit jedním průchodem, to znamená bez nutnosti načítat celá data do paměti?
 3. Jsou problémy které streamově nevyřešíme?
 4. Jaká jsou pro a proti? 
 5. Když pracujeme jen s podskupinou, má smysl načíst jen podskupinu?
 6. Co je návratová hodnota programu? Jak ji nastavit? K čemu je to dobré?
-7. Přidat transformaci dat na každý prvek v poli
-8. ukažme co se stane když bude náš vstup špatný například: jako rok zadáme 2000, který v datech není.
+7. ukažme co se stane když bude náš vstup špatný například: jako rok zadáme 2000, který v datech není.
 
 # Tipy
 
@@ -92,7 +91,7 @@ _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
    vstup pro main.py
 3. Očekávání vstupu od uživatele intput() je stejné jako prompt REPLu
 
-# Domácí cvičení Odpovězte na otázku:
+# K dalšímu procvičení:
 V roce 2013 byl nedostatek krve 0+. Kolik litrů krve mohlo transfúzní oddělení v obci Kamenice v tomto roce odebrat od lidí?
    1. Darovat krev může každý muž či žena ve věku 18-65 let.
    2. Tělesná hmotnost dárce krve by měla být minimálně 50 kg.
