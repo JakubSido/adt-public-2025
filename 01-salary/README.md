@@ -95,12 +95,12 @@ _Jak se změnila průměrná mzda mezi lety 2014 a 2015?_
 
 ```python
 if len(arguments) == 2:
-input_path = arguments[1]
-    if os.path.exists(input_path):
-        data = load_data_file(input_path)
-        for d in data:
-            print(d)
-    else:
+   input_path = arguments[1]
+   if os.path.exists(input_path):
+      data = load_data_file(input_path)
+      for d in data:
+         print(d)
+   else:
         print(f"Soubor {input_path} neexistuje")
         exit(2)
 else:
