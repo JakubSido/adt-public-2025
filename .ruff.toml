@@ -1,2 +1,3 @@
 [lint]
-ignore = ["T201"]
+select = ["ALL"]
+ignore = ["T201","D103", "D107", "PTH123", "ERA001", "PTH110", "D105", "ANN204", "D101"]
