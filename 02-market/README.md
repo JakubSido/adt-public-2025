@@ -31,7 +31,9 @@ Schématické zobrazení realizace prodejny. Počty jednotlivých obslužných b
 Abychom mohli určit, kolik lidí stojí v konkrétní čas v nějaké frontě, problém vhodně dekomponujeme na několik klíčových částí.
 
 1. Délku fronty odvodíme podle průchodů zákazníků jednoduchým vztahem.
+
   $$zákaznící_{fronta} = zákazníci_{přišli} - zákazníci_{odešli}$$
+  
   Logicky jednoduše: Ten kdo přišel a ještě neodešel, stojí ve frontě :-)
 
 2. Vytvoříme funkci, která nám umožní zjistit množinu zákazníků, kteří prošli některým checkpointem.
