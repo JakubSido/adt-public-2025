@@ -21,7 +21,7 @@ Data ke stažení :
 Aplikace načte vstupní soubory z disku a umožní uživateli analyzovat jednotlivé funkční části obchodního řetězce (obr. 1).
 Implementujte funkcionalitu, která umožní po spuštění programu odpovídat na otázky typu:
 
-Jak dlouhá je fronta v [15:00] ve městě [Plzeň] obchodu [A]
+Jak dlouhá je fronta před pokladnami v [15:00] ve městě [Plzeň] obchodu [A]
 
 ![alt text](img/sho.png)
 Schématické zobrazení realizace prodejny. Počty jednotlivých obslužných bodů (fialové) jsou proměnlivé. Žlutě jsou vyobrazeny fronty před jednotlivými obslužnými body. Fronty vznikají před samoobslužnými váhami na ovoce a zeleninu, obsluhovaným pultem s masem a před pokladnami.
@@ -58,11 +58,11 @@ Datové struktury zvolte podle typu úkolu, který chcete řešit.
               ...
   ```
 
-4. Vytvořte funkci, která načte data do vhodných datových struktur. Cestu k adresáři s daty přijme jako svůj parametr. Načtěme záznamy z celého měsíce. Doporučujeme roztřídit záznamy do slovníku podle pole ckpt. (I v našich strukturách zachovejme seřazení podle času,bude se nám hodit)
+4. Vytvořte funkci, která načte data do vhodných datových struktur. Cestu k adresáři s daty přijme jako svůj parametr. Pro jednoduchost načítejme by default záznamy pouze z prvního dne v měsíci. Doporučujeme roztřídit záznamy do slovníku podle pole ckpt. (I v našich strukturách zachovejme seřazení podle času,bude se nám hodit)
 
-  ```python
-  def load_data(datapath:str ,city:str ,shop:str) -> dict[str, list[Record]]
-  ```
+```python
+def load_data(data_path:str ,city:str ,shop:str, day:str="1-Mon") -> dict[str, list[Record]]|None:
+```
 
 5. Ověřte, že:
     1. Ošetříme hlavičku souborů, pokud je součástí (můžeme ji prostě přeskočit).
@@ -75,17 +75,19 @@ Datové struktury zvolte podle typu úkolu, který chcete řešit.
   def filter_data_time(data :dict[str, list[Record]], cond_time:int) -> dict[str, list[Record]]
   ```
 
-7. Vytvořte funkci, která vrátí množinu identifikačních čísel zákazníků, které se týkají konkrétních bodů. 
+7. Vytvořte funkci, která vrátí množinu identifikačních čísel zákazníků, které se týkají konkrétních bodů.
 
   ```python
   def get_passed_set(data : dict[str, list[Record]],key_words:list[str]) -> set[int]
   ```
 
-8. Vytvořte funkci, která získá okamžitý stav fronty v konkrétní den a vteřinu pomocí množinových operací. Topologii prodejny uvažujte neměnnou. Mění se pouze počty obslužných bodů. 
+8. Vytvořte funkci, která získá okamžitý stav fronty v konkrétní den a vteřinu pomocí množinových operací. Topologii prodejny uvažujte neměnnou. Mění se pouze počty obslužných bodů. Funkci pro jednoduchost napišme tak, aby vždy počítala velikost fronty před pokladnami. Pro obecnější řešení by samozřejmě mohla nějakou formou vstupovat jako parametr funkce.
 
   ```python 
   def get_q_size(data :dict[str, list[Record]], seconds:int) -> int:   
   ```
+
+### Kdo stíhá
 
 9. Vytvořte funkci, která na standardní výstup programu vypíše délku fronty pro každou celou hodinu pro
 
