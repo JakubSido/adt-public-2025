@@ -22,7 +22,7 @@ class NamedQueue:
 
 3. Implementujte třídu class ProcessingNode, která bude představovat aktivní prvek v systému hromadné obsluhy. 
 
-Konstruktor bude přijímat 
+Konstruktor bude přijímat
 - zdroj (odkud bere) 
 - destinaci (kam dává),
 - množství (kolik jednotek zpracuje najednou).
@@ -30,7 +30,14 @@ Konstruktor bude přijímat
 
 ```python
 class ProcessingNode:
-    def __init__(self, name:str, period: int, source: NamedQueue, destination: NamedQueue, amount=1, sigma=0.1):
+    def __init__(
+        self,
+        name: str,
+        period: int,
+        source: NamedQueue,
+        destination: NamedQueue,
+        sigma: float = 0.1,
+    )
 ```
 4. Implementujte metodu 
 ```python
@@ -38,11 +45,11 @@ def perform() -> None
 ```
 která provede přeřazení _n_ prvků ze zdroje do destinace.
 
-5. Imlementujte metodu 
+5. Imlementujeme metodu 
 ```python
-def schedule_next_occurr() -> None
+def next_occur_in(self) -> int:
+    return int(random.gauss(self.period, self.sigma))
 ```
-která provede nastavení instanční proměnné remaining_time (počet tiků do dalšího výskytu události). Pro generování použijte funkci random.gaus(mu,sigma)
 
 6. Implementujte metodu 
 ```python
@@ -94,13 +101,13 @@ Obdobným způsobem je možné modelovat chování celé řady systémů:
 1. Upravte implementaci třídy ProcessingNode tak, aby umožnila místo jedné destinace přidat celý list destinací. V případe, kdy aktivní prvek zpracuje požadavek, umístí jej náhodně do jedné z cílových destinací.
 ```python
 class ProcessingNode:
-    def __init__(self, name:str, period: int, source: NamedQueue, destinations: list[NamedQueue], amount=1, sigma=0.1):
+    def __init__(self, name:str, period: int, source: NamedQueue, destinations: list[NamedQueue], sigma=0.1):
 ```
 
 2. Upravte implementaci tak, aby kromě seznamu možných destinací vstupoval nepovinný parametr který bude ošetřídit distribuci zpracovávaných požadavků do jednotlivých destinací. Pro jednoduchost můžeme uvažovat, že seznam všech možných destinací a distribuce je vždy stejně dlouhý. Parametr dist_ratio bude tedy seznam celých čísel, které budou vyjadřovat poměr, ve kterém se budou prvky rozdělovat do příslušných front. Pokud bude bude hodnota dist_ratio=None, bude distribuce rovnoměrná.
 ```python
 class ProcessingNode:
-    def __init__(self, name:str, period: int, source: NamedQueue, destinations: list[NamedQueue], amount=1, sigma=0.1, dist_ratio:None|list[int] = None):
+    def __init__(self, name:str, period: int, source: NamedQueue, destinations: list[NamedQueue], sigma=0.1, dist_ratio:None|list[int] = None):
 ```
 
 3. Přidejte implementaci, která umožní zpětně pro každý prvek, který prošel systémem hromadné obsluhy získat záznam jeho putování. pozn. Připravte třídu pro prvek, který bude obsahovat seznam, ve kterém bude vždy (čas, obslužný_bod). 
