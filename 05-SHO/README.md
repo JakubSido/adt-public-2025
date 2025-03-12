@@ -25,7 +25,6 @@ class NamedQueue:
 Konstruktor bude přijímat
 - zdroj (odkud bere) 
 - destinaci (kam dává),
-- množství (kolik jednotek zpracuje najednou).
 - Čas doby obsluhy odpovídá normálnímu rozdělení se střední hodnotou μ a směrodatnou odchylkou σ
 
 ```python
@@ -119,6 +118,7 @@ class Item:
 ```
 4. Upravte realizaci prodejny tak, aby modelovala prodejnu, která se chová obdobným způsobem jako jsme zjistili v analýze dat na dřívejším cvičení. 
     - Přidejte pult s masem a váhu na ovoce
+    - Přidejte funkcionalitu, která by umožnila odbavit více 'zákazníků' najednou. (Příjezd tramvaje)
     - Zákazník po příchodu do obchodu jde s pravděpodobností 40% nakupovat zeleninu
     - Přidejte větší počet cílových pokladen. 
     - Modelujte chování v odpolední špičce, kdy v 15:00 větší množství lidí odchází z práce a jde nakupovat. 
