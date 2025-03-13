@@ -63,6 +63,20 @@ která sníží čítač zbývajícího času. Pokud čas vyprší provede obslu
     4. Implemntujte jednoduchou smyčku, která bude iterovat vteřinami ve dni. S každou
 iterací zavolá metodu `tick()`
 
+```python 
+    source_queue = NamedQueue("Fronta")
+    destination_queue = NamedQueue("Odbaveno")
+
+    for i in range(10):
+        source_queue.q.append(i)
+
+    node = ProcessingNode("Pokladni", period=5, source=source_queue, destination=destination_queue)
+
+    # 50 kroků simulace
+    for _ in range(50):
+        node.tick()
+        
+```
 
 
 
