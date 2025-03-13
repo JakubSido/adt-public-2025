@@ -42,7 +42,7 @@ class ProcessingNode:
 ```python
 def perform() -> None 
 ```
-která provede přeřazení _n_ prvků ze zdroje do destinace.
+která provede přeřazení jednoho prvku ze zdroje do destinace.
 
 5. Imlementujeme metodu 
 ```python
@@ -56,8 +56,12 @@ def tick() -> None
 ```
 která sníží čítač zbývajícího času. Pokud čas vyprší provede obsluhu a naplánuje další výskyt obsluhy.
 
-7. Ve funkci main implementujte jednoduchou smyčku, která bude iterovat vteřinami ve dni. S každou
-iterací na všech instancích třídy class ProcessingNode zavolá metodu `tick()`
+7. Ve funkci main:
+    1. Vytvořte instanci NamedQueue a naplňte ji větším počtem prvků. 
+    2. Vytvořte instanci NamedQueue pro výstup. 
+    3. Vytvořte instanci ProcessingNode, který bude pracovat s oběma frontami (source, destination). 
+    4. Implemntujte jednoduchou smyčku, která bude iterovat vteřinami ve dni. S každou
+iterací zavolá metodu `tick()`
 
 
 
@@ -72,7 +76,7 @@ Tentokrát nad systémem však získáme plnou kontrolu, budeme moci upravovat a
 9. Implementujte třídu Observer, který ve svém konstruktoru přijme seznam front, které má sledovat.
 ```python
 class Observer:
-    def __init__(self, list_to_observe):
+    def __init__(self, list_to_observe: list[NamedQueue]):
 ```
 
 10. Implementujte metodu do třídy Observer, která vypíše stav všech sledovaných front do terminálu například v tomto formátu:
@@ -88,6 +92,11 @@ def take_snapshot(self):
 
 11. Zařiďte, aby se metoda _take_snapshot()_ zavolala každou minutu simulovaného času.
 
+## Kdo stíhá
+12. Vypište čas simulace s každým logem : Například můžete upravit metodu 
+`take_snapshot(self, time:int)`
+která bude vypisovat stav fronty s časem. Například:
+`06:40  ==  in_the_streets(943)->shop_gate(0)->vege_queue(0)->final_cr(2)->done(55)`
 
 # Závěrem
 Obdobným způsobem je možné modelovat chování celé řady systémů:
@@ -97,6 +106,7 @@ Obdobným způsobem je možné modelovat chování celé řady systémů:
 
 
 # Další cvičení
+
 1. Upravte implementaci třídy ProcessingNode tak, aby umožnila místo jedné destinace přidat celý list destinací. V případe, kdy aktivní prvek zpracuje požadavek, umístí jej náhodně do jedné z cílových destinací.
 ```python
 class ProcessingNode:
