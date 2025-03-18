@@ -28,10 +28,6 @@ class SudokuSolver:
 
     def get_empty_cell(self) -> tuple[int, int] | None:
         """ Gets the coordinates of the next empty field. """
-        for r in range(9):
-            for c in range(9):
-                if self.field[r, c] == 0:
-                    return r, c
         return None
 
     def solve(self) -> bool:

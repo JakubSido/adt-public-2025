@@ -67,9 +67,16 @@ def check_one_cell(self, r:int,c:int) -> bool:
 ```
 
 4. Implementujte rekurzivní algoritmus s navracením pro řešení Sudoku. Algoritmus funguje následovně:
-    1. Najdi volné políčko. Pokud žádné není, konec – vyřešeno.
-    2. Zkus vyplnit postupně čísla 1-9 a ověřuj validitu. Pokud je rozmístění čísel validní jdi na bod 1, pokud ne, opakuj bod 2 s následujícím číslem.
-    3. Pokud žádné s čísel 1-9 na aktuálním políčku nesplňuje podmínky, vrať se o políčko zpět a tam pokračuj následujícím číslem.
+    1. Najdi volné políčko. Implementujte jako metodu
+
+    ```python
+         def get_empty_cell(self) -> tuple[int, int] | None:
+    """ Gets the coordinates of the next empty field. """
+    ```
+
+    2. Pokud žádné není, konec – vyřešeno.
+    3. Zkus vyplnit postupně čísla 1-9 a ověřuj validitu. Pokud je rozmístění čísel validní jdi na bod 1, pokud ne, opakuj bod 2 s následujícím číslem.
+    4. Pokud žádné s čísel 1-9 na aktuálním políčku nesplňuje podmínky, vrať se o políčko zpět a tam pokračuj následujícím číslem.
 
 ```python
 def solve(self):
