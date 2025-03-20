@@ -5,6 +5,10 @@ Cílem je naprogramovat automatické řešení Sudoku s využitím algoritmu nav
 
 ![sudoku](img/sudoku.png)
 
+Zde je příklad postupu backtracking pro částečné řešení příkladového sudoku:
+
+![sudoku](img/backtracking_example_no_field.svg)
+
 
 
 
