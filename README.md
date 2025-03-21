@@ -28,6 +28,13 @@ https://github.com/JakubSido/example_package
 - [w3c](https://www.w3schools.com/python)
 - [ArjanCodes - YouTube - Python](https://www.youtube.com/@ArjanCodes/videos)
 
+### Úlohy
+
+- [programiz](https://www.programiz.com/python-programming/examples/)
+- [hackerrank.com](https://www.hackerrank.com/domains/python)
+- [leetcode.com](https://leetcode.com/problemset/)
+- [codewars.com](www.codewars.com)
+
 ### Jak psát čitelný a dobře udržitelný kód?
 
 Python dává programátorovi velkou volnost. S velkou sílou přichází však i velká zodpovědnost. Pokud vám záleží na tom, aby po vás byl kód čitelný, pro ostatní přehledný a dobře udržitelný, doporučujeme pročíst si [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
