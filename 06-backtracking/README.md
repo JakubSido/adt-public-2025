@@ -47,7 +47,7 @@ class SudokuSolver:
 
 ```python
 # generické pro všechny případy .. řádek, sloupec, blok
-def check_sequence(self, sequence:list[int]) -> bool:
+def check_sequence(self,  sequence:np.ndarray) -> bool:
     pass
 
 def check_row(self,row_index):
