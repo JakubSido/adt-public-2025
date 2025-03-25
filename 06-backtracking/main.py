@@ -7,6 +7,15 @@ class SudokuSolver:
     def __init__(self):
         self.field = np.zeros([9, 9], dtype=int)
 
+    def load(self, file_path:str) -> None:
+
+        # list of lists (rows)
+        loaded_rows : list[list[int]] = [] 
+        # TODO implement loading of the file
+
+        # convert nested list to numpy array
+        self.field = np.array(loaded_rows)
+
 
 
     def check_sequence(self, sequence:np.ndarray) -> bool:
@@ -35,8 +44,6 @@ class SudokuSolver:
         return False 
 
 
-    def check_field(self) -> bool:
-        return True
 
 
 

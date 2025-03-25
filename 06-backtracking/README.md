@@ -39,6 +39,7 @@ class SudokuSolver:
         self.field = np.zeros([9,9], dtype=int)
 ```
 
+2. Implementujme tělo funkce load()
 
 
 
