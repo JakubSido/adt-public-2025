@@ -33,7 +33,7 @@ https://github.com/JakubSido/example_package
 - [programiz](https://www.programiz.com/python-programming/examples/)
 - [hackerrank.com](https://www.hackerrank.com/domains/python)
 - [leetcode.com](https://leetcode.com/problemset/)
-- [codewars.com](www.codewars.com)
+- [codewars.com](https://www.codewars.com/)
 
 ### Jak psát čitelný a dobře udržitelný kód?
 
