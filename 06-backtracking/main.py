@@ -11,7 +11,7 @@ class SudokuSolver:
 
         # list of lists (rows)
         loaded_rows : list[list[int]] = [] 
-        # TODO implement loading of the file
+        # TODO implement loading of the file 
 
         # convert nested list to numpy array
         self.field = np.array(loaded_rows)
@@ -23,13 +23,13 @@ class SudokuSolver:
 
 
     def check_row(self, row_index:int) -> bool:
-        pass
+        return False
 
     def check_column(self, column_index:int) -> bool:
-        pass 
+        return False
 
     def check_block(self, row_index:int, column_index:int) -> bool:
-        pass 
+        return False
 
 
     def check_one_cell(self, row_index:int , column_index:int) -> bool:
