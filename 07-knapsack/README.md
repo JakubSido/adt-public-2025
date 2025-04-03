@@ -1,4 +1,3 @@
-
 # Fibonacciho posloupnost
 
 Fibonacciho posloupnost je dána rekurzivním předpisem:
@@ -6,7 +5,6 @@ Fibonacciho posloupnost je dána rekurzivním předpisem:
 $$fib(n) = fib(n − 1) + fib(n − 2)$$
 $$fib(0) = 0$$
 $$fib(1) = 1$$
-
 
 1. Implementujme rekurzivní výpočet fibonacciho čísla podle předpisu (top-down).
 
@@ -78,37 +76,20 @@ Skladbu buďto zahrneme K(1, 4) nebo nezahrneme K(1, 8).
 
 ![knapsack](img/knapsack.png)
 
-
-
 ##  Dynamické programování
+
 Na obrázku můžeme vidět, k řešení K(2, 4) se dostaneme různými cestami (různé kombinace předchozích skladeb, mají stejnou délku) a backtracking tedy počítá stejné věci vícekrát (stejně jako
 v případě Fibonacciho posloupnosti). S narůstající hloubkou řešení se to bude stávat mnohem
 častěji. Když tedy problém vhodně dekomponujeme, můžeme se opakovanému výpočtu vyhnout.
 Toho můžeme dosáhnout prostým přidáním ukládání výsledků do backtrackingového řešení. Problém stále řešíme rekurzivně (odshora dolů) jen si zaznamenáváme mezivýsledky pro pozdější
 použití.
 
-
-# Jak si příště usnadnit práci? 
-1. Upravte úlohu pro výpočet fibonacciho čísla a použijte @functools.cache pro ukládání výsledků. 
-```python
-@functools.cache
-def fib_cache(n: int) -> int:
-    pass
-```
-
-
-
-
-# Fibonacci jinak 
-Dalo by se fibonacciho číslo vypočítat jinak? 
-- ne shora ale odspodu? 
-- s minimální užitou pamětí pro ukládání předchozích výpočtů? 
+## Poznámka
 
 Dynamické programování je velice mocná technika. Transformace úlohy pro aplikaci dynamického programování mnohdy není přímočará a identifikovat duplicitní část stavového prostoru úlohy je náročné a analýza úlohy  může vyžadovat nezanedbatelný čas a úsilí. To, jakým způsobem dokážeme úlohu analyzovat a identifikovat v ní opakující se výpočty, navíc je použít pro urychlení výpočtu s minimální paměťovou náročností je to, čeho bychom chtěli dosáhnout. 
 
-
-
 # Další cvičení
+
 1. Implementujte hladový algoritmus pro úlohu párty mixu. 
     - změřte rychlost a správnost řešení. 
     - jakou cenu platíme za rychlost/správné řešení
@@ -116,8 +97,7 @@ Dynamické programování je velice mocná technika. Transformace úlohy pro apl
 
 # Motivace a Další materiály
 
-
-Příklady, kde se DP používá: 
+Příklady, kde se DP používá:
 - řetězce
 - FFT
 - řezání materiálů
@@ -129,8 +109,6 @@ Příklady, kde se DP používá:
 - Jak souvisí Dynamické programování se studenou válkou? https://www.youtube.com/watch?v=nmgFG7PUHfo
 
 - Více okolo DP https://www.youtube.com/watch?v=Hdr64lKQ3e4
-
-
 
 # Apendix
 
