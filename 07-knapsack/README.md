@@ -31,7 +31,7 @@ Algoritmus můžeme navrhnout efektivněji, když si budeme ukládat mezivýsled
 def fib_mem(n: int, lookup: dict[int, int]) -> int:
 ```
 
-4. Porovnejme rychlost výpočtu obou implementací. Změřte poměr počtu volání funkce vs. vyvolání z cache.
+4. Porovnejme rychlost výpočtu obou implementací. Porovnejte počet volání funkce s cache a bez cache.
 
 5. Implementujte výpočet fibonacciho čísla bez rekurze pomocí listu (bottom-up s tabulkou)
 
