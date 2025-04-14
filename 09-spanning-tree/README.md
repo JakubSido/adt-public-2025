@@ -28,7 +28,7 @@ Implementujte graf pomocí seznamu sousednosti. Využijte poskytnutou předlohu 
     ```python
     class Graph:
         def __init__(self) -> None:
-            self.edges: list[list[tuple[float, int]]] = []
+            self.edges: dict[int,list[tuple[float, int]]] = {}
     ```
 
 3. vyplňte funkcionalitu přidávání hran do grafu
