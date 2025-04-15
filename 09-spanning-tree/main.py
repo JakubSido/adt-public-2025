@@ -46,7 +46,10 @@ def spanning_tree(graph: Graph) -> None:
 def main() -> None:
     graph = load_graph("09-spanning-tree/data/graph_grid_s3_3.json")
 
-    painter = adthelpers.painter.Painter(graph)
+    painter = adthelpers.painter.Painter(
+        graph,
+        # colors=("red", "blue", "yellow", "grey") # pokud by byl problém s barvami je možné je změnit
+    )
     painter.draw_graph()
 
     # debug to see progress...
@@ -58,5 +61,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
 
