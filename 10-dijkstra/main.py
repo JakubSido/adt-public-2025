@@ -23,11 +23,6 @@ class Graph:
         self.edges[src].append((weight, dst))
 
 
-    def __len__(self) -> int:
-        all = 0
-        for e in self.edges.values():
-            all += len(e)
-        return all
 
     def dijkstra(
         self, start_id: int, end_id: int, show_progress: bool = True,
