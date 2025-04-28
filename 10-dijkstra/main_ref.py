@@ -12,9 +12,9 @@ import adthelpers
 import plotly.express as px
 
 class Graph:
-    def __init__(self, oriented: bool = False) -> None:
+    def __init__(self, directed: bool = False) -> None:
         self.edges: dict[int, list[tuple[float, int]]] = {}
-        self.oriented = oriented
+        self.oriented = directed
         self.edge_count = 0
 
     def add_edge(self, src: int, dst: int, weight: float = 0) -> None:
@@ -62,33 +62,33 @@ class Graph:
         queue.put((0, (-1, start_id)))  # enter the graph -> weight=0, source=-1, target=0
 
         while not queue.empty():
-            weight, (source, actual) = queue.get()
-            if actual == end_id:
+            weight, (source, current) = queue.get()
+            if current == end_id:
                 break
-            if actual in closed:
+            if current in closed:
                 continue
-            closed.add(actual)
+            closed.add(current)
 
             # add all newly accessible edges to the queue
-            for weight, neighbor in self.edges[actual]:
+            for weight, neighbor in self.edges[current]:
                 if neighbor not in closed:
                     # navic
-                    new_distance = distances[actual] + weight
+                    new_distance = distances[current] + weight
                     if new_distance < distances[neighbor]:
                         distances[neighbor] = new_distance
-                        predecessors[neighbor] = actual
+                        predecessors[neighbor] = current
 
-                    queue.put((new_distance, (actual, neighbor)))
+                    queue.put((new_distance, (current, neighbor)))
 
                     if show_progress: 
-                        painter.draw_graph(actual)  # show discovered node
+                        painter.draw_graph(current)  # show discovered node
 
         
 
         return distances, predecessors
 
 def load_graph(filename: str) -> Graph:
-    graph = Graph(oriented=False)
+    graph = Graph(directed=False)
 
     with open(filename, encoding="utf-8") as f:
         data = json.load(f)
@@ -101,7 +101,7 @@ def load_graph(filename: str) -> Graph:
 
 
 def load_graph_csv(filename: str) -> Graph:
-    graph = Graph(oriented=True)
+    graph = Graph(directed=True)
 
     # TODO 3 Načtěte graf z CSV souboru
     

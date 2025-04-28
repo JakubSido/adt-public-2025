@@ -38,17 +38,17 @@
     5. Inicializuj slovník předchůdců (predecessors) jako prázdný
     6. Do fronty vlož počáteční uzel s nulovou vzdáleností a "předchůdcem" -1
     7. Dokud fronta není prázdná:
-        1. Z fronty vyber uzel s nejmenší vzdáleností (actual)
+        1. Z fronty vyber uzel s nejmenší vzdáleností (current)
         2. Pokud jsme už tento uzel navštívili, pokračuj na další
-        3. Pokud je actual cílový uzel, ukonči algoritmus (máme nejkratší cestu)
-        4. Přidej actual do množiny uzavřených uzlů (closed)
+        3. Pokud je current cílový uzel, ukonči algoritmus (máme nejkratší cestu)
+        4. Přidej current do množiny uzavřených uzlů (closed)
 
-        5. Pro každého souseda actual, který ještě nebyl uzavřen:
-            1. Spočítej novou vzdálenost jako: vzdálenost[actual] + váha hrany
+        5. Pro každého souseda current, který ještě nebyl uzavřen:
+            1. Spočítej novou vzdálenost jako: vzdálenost[current] + váha hrany
             2. Pokud je spočítaná vzdálenost menší než dosavadně uložená:
                 - aktualizuj vzdálenost souseda
-                - nastav předchůdce souseda na actual
-            3. Vlož souseda do fronty spolu s jeho novou vzdáleností
+                - nastav předchůdce souseda na current
+                - Vlož souseda do fronty spolu s jeho novou vzdáleností
 
     8. Po skončení algoritmu vrať slovník vzdáleností a slovník předchůdců
     ```

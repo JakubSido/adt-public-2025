@@ -12,9 +12,9 @@ import adthelpers
 import plotly.express as px
 
 class Graph:
-    def __init__(self, oriented: bool = False) -> None:
+    def __init__(self, directed: bool = False) -> None:
         self.edges: dict[int, list[tuple[float, int]]] = {}
-        self.oriented = oriented
+        self.oriented = directed
         self.edge_count = 0
 
     def add_edge(self, src: int, dst: int, weight: float = 0) -> None:
@@ -52,7 +52,7 @@ class Graph:
         return distances, predecessors
 
 def load_graph(filename: str) -> Graph:
-    graph = Graph(oriented=False)
+    graph = Graph(directed=False)
 
     with open(filename, encoding="utf-8") as f:
         data = json.load(f)
@@ -65,7 +65,7 @@ def load_graph(filename: str) -> Graph:
 
 
 def load_graph_csv(filename: str) -> Graph:
-    graph = Graph(oriented=True)
+    graph = Graph(directed=True)
 
     # TODO 3 Načtěte graf z CSV souboru
     return graph
