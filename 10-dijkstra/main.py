@@ -21,7 +21,9 @@ class Graph:
         if src not in self.edges:
             self.edges[src] = []
         self.edges[src].append((weight, dst))
-
+        if dst not in self.edges:
+            self.edges[dst] = []
+        self.edges[dst].append((weight, src))
 
 
     def dijkstra(
@@ -135,8 +137,8 @@ def pilsen() -> None:
 
 
 def main() -> None:
-    demo()
-    # pilsen()
+    # demo()
+    pilsen()
     input("...")
 
 if __name__ == "__main__":

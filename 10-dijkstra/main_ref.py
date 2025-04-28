@@ -21,13 +21,13 @@ class Graph:
         if src not in self.edges:
             self.edges[src] = []
         self.edges[src].append((weight, dst))
-
         
-        if not self.oriented:
-            if dst not in self.edges:
-                self.edges[dst] = []
-            self.edges[dst].append((weight, src))
+        if self.oriented:
+            return
         
+        if dst not in self.edges:
+            self.edges[dst] = []
+        self.edges[dst].append((weight, src))
 
 
     def dijkstra(
